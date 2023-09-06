@@ -1,0 +1,17 @@
+// Obtén el elemento de entrada
+const input = document.getElementById('miInput');
+
+// Agrega un evento de escucha para verificar el valor cuando se cambie
+input.addEventListener('input', () => {
+  // Obtén el valor del input y elimina los espacios en blanco al inicio y al final
+  const valor = input.value.trim();
+
+  // Verifica si el valor contiene espacios en blanco
+  if (valor.includes(' ')) {
+    // Si contiene espacios en blanco, muestra un mensaje de error
+    input.setCustomValidity('No se permiten espacios en blanco');
+  } else {
+    // Si no contiene espacios en blanco, elimina el mensaje de error
+    input.setCustomValidity('');
+  }
+});
